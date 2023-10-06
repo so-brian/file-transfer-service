@@ -1,4 +1,4 @@
-package untility
+package utility
 
 import (
 	"math/rand"
@@ -12,7 +12,7 @@ func RandStr(length int) string {
 
 	// Generating Random string
 	for i := 0; i < length; i++ {
-		ran_str[i] = byte(rune(65 + rand.Intn(25)))
+		ran_str[i] = byte(rune(97 + rand.Intn(25)))
 	}
 
 	// Displaying the random string
