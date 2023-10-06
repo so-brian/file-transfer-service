@@ -36,7 +36,7 @@ on:
 
 env:
   AZURE_CONTAINER_REGISTRY: "sobrian"
-  CONTAINER_NAME: "cache-service"
+  CONTAINER_NAME: "file-transfer-service"
   REGISTRY_RESOURCE_GROUP: "sobrian"
   AKS_RESOURCE_GROUP: "sobrian-k8s"
   CLUSTER_NAME: "sobrian"
