@@ -1,4 +1,4 @@
-package untility
+package utility
 
 import "testing"
 

@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: file-transfer-service-deployment
+  labels:
+    app: file-transfer-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: file-transfer-service
+  template:
+    metadata:
+      labels:
+        app: file-transfer-service
+    spec:
+      containers:
+      - name: file-transfer-service
+        image: sobrian.azurecr.io/file-transfer-service
+        ports:
+        - containerPort: 8080
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: file-transfer-service-service
+spec:
+  selector:
+    app: file-transfer-service
+  type: LoadBalancer
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8080
